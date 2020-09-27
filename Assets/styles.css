@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Oxygen&display=swap');
+
+body {
+	background: rgb(69,66,108);
+    background: linear-gradient(0deg, rgba(69,66,108,1) 0%, rgba(43,43,43,1) 100%, rgba(0,212,255,1) 100%);
+}
+
+span, p, h1, h2, h3, h4, h5, h6, a {
+    font-family: 'Oxygen', sans-serif;
+}
+
+span, p, h1, h2, h3, h4, h5, h6, li, label{
+    color:white;
+}
+
+ul, ol{
+    font-size: 15px;
+    padding: 0;
+}
+
+img{
+    max-width: 100%;
+}
+
+svg{
+    color:white;
+}
+
+section{
+    padding:10px;
+    background-color: rgba(255,255,255,0.02);
+    border: 2px solid rgba(255,255,255,0.05);
+    border-radius: 10px;
+}
+
+.daily_recette{
+    padding-bottom: 15px;
+}
+
+.recette_title{
+    font-family: 'Bangers', cursive;
+    padding:10px;
+}
