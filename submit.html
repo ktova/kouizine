@@ -7,7 +7,8 @@
     <link rel="icon" href="/Assets/favicon.png"  type="image/icon type">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="/Assets/styles.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>    <script src="https://kit.fontawesome.com/0d2059c859.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/0d2059c859.js" crossorigin="anonymous"></script>
 </head>
 
 <main class="container">
@@ -37,9 +38,9 @@
     <body>
         <section class="d-flex flex-column text-center">
 
-            <h2 class="daily_recette">Publiez votre recette !</h2>
-            <span>Partagez vos recette préférés avec notre communauté !</span>
-            <span>Bénéficiez de notre programme partenaire et gagnez 0 euros !!</span>
+            <h2 id="daily_recette" class="daily_recette">Publiez votre recette !</h2>
+            <span id="recetteDesc">Partagez vos recette préférés avec notre communauté !</span>
+            <span id="recetteDesc">Bénéficiez de notre programme partenaire et gagnez 0 euros !!</span>
             <hr>
             <div id="recetteSubmit_warning" class="alert alert-warning" role="alert">
                 Les recettes publiés par la communauté sont sujet à une validation de notre équipe !
@@ -152,6 +153,8 @@
                         // Change main content on valid response
                         $('#recetteSubmit').html('<i class="fa fa-refresh fa-spin fa-3x fa-fw text-warning"></i>');
                         $('#validForm').fadeIn(250);
+                        $('#daily_recette').html("Merci d'avoir publié votre recette !");
+                        $('#recetteDesc').remove();
                     },
                     error:function(){
                         $('#errorForm').fadeIn(250);
