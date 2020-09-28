@@ -7,6 +7,7 @@
     <link rel="icon" href="/Assets/favicon.png"  type="image/icon type">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="/Assets/styles.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/0d2059c859.js" crossorigin="anonymous"></script>
 </head>
 
@@ -39,35 +40,30 @@
             </div>
 
             <form>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">E-mail</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <small id="emailHelp" class="form-text text-muted">Votre adresse ne sera jamais partagé avec un tiers.</small>
-                </div>
-
+    
                 <div class="form-group">
                     <label for="title">Titre de la recette</label>
-                    <input type="¨text" class="form-control" id="title">
+                    <input type="¨text" class="form-control" id="submit_title">
                 </div>
 
                 <div class="form-group">
                     <label for="pseudo">Pseudonyme</label>
-                    <input type="¨text" class="form-control" id="pseudo">
+                    <input type="¨text" class="form-control" id="submit_user">
                 </div>
 
                 <div class="form-group">
                     <label for="timer">Temps de cuisson</label>
-                    <input type="¨text" class="form-control" id="timer">
+                    <input type="¨text" class="form-control" id="submit_timer">
                 </div>
 
                <div class="form-group">
                     <label for="ingredients">Ingrédients</label>
-                    <textarea class="form-control" id="ingredients" rows="3"></textarea>
+                    <textarea class="form-control" id="submit_content" rows="3"></textarea>
                </div>
 
                <div class="form-group">
                     <label for="etapes">Etapes</label>
-                    <textarea class="form-control" id="etapes" rows="3"></textarea>
+                    <textarea class="form-control" id="submit_steps" rows="3"></textarea>
                </div>
 
                 <div class="form-group form-check">
@@ -87,7 +83,6 @@
               </div>
 
             <!-- Form valid box after submitting -->
-
 
             <hr>
            
@@ -112,9 +107,16 @@
         <!-- Ajax Form handling -->
         <script>
             function form_submit_ajax() {
-                console.log('oui');
                 // Variables
-                var bookid = bookID;
+                var recette_title = $('#submit_title').html();
+                var recette_user = $('#submit_title').html();
+                var recette_timer = $('#submit_title').html();
+                var recette_content = $('#submit_title').html();
+                var recette_steps = $('#submit_title').html();
+                var recette_checker = $('#checker').html();
+
+                console.log(recette_title);
+                console.log(recette_checker);
 
                 // Ajax call
                 $.ajax({
