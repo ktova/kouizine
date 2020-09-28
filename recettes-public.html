@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon site de kouizine</title>
+    <link rel="icon" href="/Assets/favicon.png"  type="image/icon type">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="/Assets/styles.css">
+    <script src="https://kit.fontawesome.com/0d2059c859.js" crossorigin="anonymous"></script>
+</head>
+
+<main class="container">
+
+    <header>
+        <a class="d-flex justify-content-center" href="/home.html">
+            <img src="/Assets/logo_kz.png" alt="Logo Kouizine">
+        </a>
+        
+        <nav>
+            <div class="d-flex justify-content-around">
+                <div class="dropdown">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-utensils"></i>&nbsp; Nos recettes
+                    </button>
+                    <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenu">
+                        <a class="dropdown-item text-white" href="/recettes.html">Team Kouizine</a>
+                        <a class="dropdown-item text-white" href="/recettes-public.html">Communauté</a>
+                    </div>
+                </div>
+                <a href="/submit.html"><button type="button" class="btn btn-warning"><i class="fas fa-scroll"></i>&nbsp; Publier une recette</button></a>
+            </div>
+        </nav>
+        <hr>
+    </header>
+
+    <body>
+        <section class="d-flex flex-column text-center">
+
+            <h2 class="daily_recette">Les recettes de la commu</h2>
+            <hr>
+
+        </section>
+
+        <hr>
+    </body>
+
+    <footer>
+        <nav>
+            <div class="d-flex justify-content-around">
+                <a href="https://facebook.com" target="_blank"><button type="button" class="btn btn-outline-light"><i class="fab fa-facebook-f"></i></button></a>
+                <a href="https://twitter.com" target="_blank"><button type="button" class="btn btn-outline-light"><i class="fab fa-twitter"></i></button></a>
+                <a href="https://instagram.com" target="_blank"><button type="button" class="btn btn-outline-light"><i class="fab fa-instagram"></i></button></a>
+            </div>
+        </nav>
+        <br>
+        <div class="d-flex justify-content-center">
+            <p>Copyright Kouizine | <a href="/mentions_legales.html" class="text-decoration-none">Mentions légales</a></p>
+        </div>
+
+        <!-- Menu toggle -->
+        <script>
+        $('#dropdownMenu').on('click', function () {
+            $('.dropdown-menu').toggle();
+        });
+        </script>
+    </footer>
+
+</main>
+
+</html>
