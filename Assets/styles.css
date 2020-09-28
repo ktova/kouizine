@@ -121,3 +121,7 @@ section{
 #errorForm{
     display: none;
 }
+
+#checkInfo{
+    color:orangered !important;
+}

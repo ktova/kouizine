@@ -52,7 +52,8 @@
 
                 <div class="form-group">
                     <label for="timer">Temps de cuisson</label>
-                    <input type="text" class="form-control" id="submit_timer">
+                    <input type="text" class="form-control" id="submit_timer" aria-describedby="timerHelp">
+                    <small id="timerHelp" class="form-text text-muted">Entrez le temps de cuisson en minutes.</small>
                 </div>
 
                <div class="form-group">
@@ -66,8 +67,10 @@
                </div>
 
                 <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="checker">
+                    <input type="checkbox" class="form-check-input" id="checker" aria-describedby="checkInfo">
                     <label class="form-check-label" for="checker">Je suis un humain</label>
+                    <small id="checkInfo" class="form-text text-muted"><i class="fas fa-info-circle" role="button"></i>&nbsp; L'upload d'image est actuellement indisponible.</small>
+
                 </div>
 
             </form>
@@ -135,14 +138,14 @@
                         // Change main content on valid response
                     },
                     error:function(){
-                        $('#errorForm').show(500);
+                        $('#errorForm').fadeIn(250);
                     }
                 })
             }
 
             // Ajax response css changes
             $('.close').click(function(){
-                $('#errorForm').hide(250);
+                $('#errorForm').fadeOut(250);
             });
         </script>
     </footer>
