@@ -34,11 +34,11 @@
             <span>Partagez vos recette préférés avec notre communauté !</span>
             <span>Bénéficiez de notre programme partenaire et gagnez 0 euros !!</span>
             <hr>
-            <div class="alert alert-warning" role="alert">
+            <div id="recetteSubmit_warning" class="alert alert-warning" role="alert">
                 Les recettes publiés par la communauté sont sujet à une validation de notre équipe !
             </div>
 
-            <form>
+            <form id="recetteSubmit">
     
                 <div class="form-group">
                     <label for="title">Titre de la recette</label>
@@ -74,7 +74,7 @@
                 </div>
 
             </form>
-            <button class="btn btn-primary" onclick="form_submit_ajax()"><i class="fas fa-scroll"></i>&nbsp; Publier</button>
+            <button id="recetteSubmit_btn" class="btn btn-primary" onclick="form_submit_ajax()"><i class="fas fa-scroll"></i>&nbsp; Publier</button>
 
             <!-- Form error box after submitting -->
             <div id="errorForm" class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -85,6 +85,9 @@
               </div>
 
             <!-- Form valid box after submitting -->
+            <div id="validForm" class="text-white">
+                Votre publication a <strong>bien été prise en compte</strong> ! <br> Elle sera ajoutée à notre liste de recettes si aucune anomalie n'est trouvée pendant la revue !
+            </div>
 
             <hr>
            
@@ -134,8 +137,13 @@
                     },
                     success:function(response){
                         console.log(response);
-                        $('.alert_success').show(500);
+                        // remove form
+                        $('#recetteSubmit').empty();
+                        $('#recetteSubmit_warning').remove();
+                        $('#recetteSubmit_btn').remove();
                         // Change main content on valid response
+                        $('#recetteSubmit').html('<i class="fa fa-refresh fa-spin fa-3x fa-fw text-warning"></i>');
+                        $('#validForm').fadeIn(250);
                     },
                     error:function(){
                         $('#errorForm').fadeIn(250);

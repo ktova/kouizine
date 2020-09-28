@@ -118,10 +118,14 @@ section{
 
 /* Ajax handlers */
 
-#errorForm{
+#errorForm, #validForm{
     display: none;
 }
 
 #checkInfo{
     color:orangered !important;
+}
+
+#validForm{
+    margin-top:30px;
 }
