@@ -43,6 +43,10 @@ section{
     padding:10px;
 }
 
+.dropdown-item:hover, .dropdown-item:active, .dropdown-item:focus{
+    background-color:  rgba(43,43,43,1);
+}
+
 .shadow{
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.5) !important;
 }

@@ -19,7 +19,15 @@
         
         <nav>
             <div class="d-flex justify-content-around">
-                <a href="/recettes.html"><button type="button" class="btn btn-outline-light"><i class="fas fa-utensils"></i>&nbsp; Nos recettes</button></a>
+                <div class="dropdown">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-utensils"></i>&nbsp; Nos recettes
+                    </button>
+                    <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenu">
+                        <a class="dropdown-item text-white" href="/recettes.html">Team Kouizine</a>
+                        <a class="dropdown-item text-white" href="/recettes-public.html">Communauté</a>
+                    </div>
+                </div>
                 <a href="/submit.html"><button type="button" class="btn btn-warning"><i class="fas fa-scroll"></i>&nbsp; Publier une recette</button></a>
             </div>
         </nav>
@@ -90,6 +98,13 @@
         <div class="d-flex justify-content-center">
             <p>Copyright Kouizine | <a href="/mentions_legales.html" class="text-decoration-none">Mentions légales</a></p>
         </div>
+
+        <!-- Menu toggle -->
+        <script>
+        $('#dropdownMenu').on('click', function () {
+            $('.dropdown-menu').toggle();
+        });
+        </script>
     </footer>
 
 </main>
