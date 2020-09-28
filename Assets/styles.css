@@ -115,3 +115,9 @@ section{
 .isHidden{
     display: none !important;
 }
+
+/* Ajax handlers */
+
+#errorForm{
+    display: none;
+}
