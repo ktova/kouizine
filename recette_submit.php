@@ -6,3 +6,4 @@
  */
 
 // Script
+print_r($_POST);

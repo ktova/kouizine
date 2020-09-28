@@ -34,8 +34,11 @@
             <span>Partagez vos recette préférés avec notre communauté !</span>
             <span>Bénéficiez de notre programme partenaire et gagnez 0 euros !!</span>
             <hr>
+            <div class="alert alert-warning" role="alert">
+                Les recettes publiés par la communauté sont sujet à une validation de notre équipe !
+            </div>
 
-            <form action="https://kouizine.tova.dev/recette_submit">
+            <form>
                 <div class="form-group">
                     <label for="exampleInputEmail1">E-mail</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -72,14 +75,21 @@
                     <label class="form-check-label" for="checker">Je suis un humain</label>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Publier</button>
-
             </form>
+            <button class="btn btn-primary" onclick="form_submit_ajax()"><i class="fas fa-scroll"></i>&nbsp; Publier</button>
+
+            <!-- Form error box after submitting -->
+            <div id="errorForm" class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Une erreur est survenue !</strong>&nbsp; Vérifiez les champs svp.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true" style="color:black">&times;</span>
+                </button>
+              </div>
+
+            <!-- Form valid box after submitting -->
+
 
             <hr>
-            <div class="alert alert-warning" role="alert">
-                Les recettes publiés par la communauté sont sujet à une validation de notre équipe !
-            </div>
            
         </section>
 
@@ -98,6 +108,32 @@
         <div class="d-flex justify-content-center">
             <p>Copyright Kouizine | <a href="/mentions_legales.html" class="text-decoration-none">Mentions légales</a></p>
         </div>
+
+        <!-- Ajax Form handling -->
+        <script>
+            function form_submit_ajax() {
+                console.log('oui');
+                // Variables
+                var bookid = bookID;
+
+                // Ajax call
+                $.ajax({
+                    url: 'https://kouizine.tova.dev/recette_submit',
+                    context: this,
+                    method:'POST',
+                    data: {
+                        sendrelease : bookid
+                    },
+                    success:function(){
+                        $('.alert_success').show(500);
+                    },
+                    error:function(result){
+                        $('.errorForm').show(500);
+                        $('.errortype').text(result.status);
+                    }
+                })
+            }
+        </script>
     </footer>
 
 </main>
