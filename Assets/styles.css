@@ -112,3 +112,10 @@ section{
 #hidden_section > i:hover {
     cursor: pointer;
 }
+
+.isHidden{
+    display: none !important;
+}
+.isVisible{
+    display: flex !important;
+}

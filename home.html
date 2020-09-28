@@ -7,6 +7,7 @@
     <link rel="icon" href="/Assets/favicon.png"  type="image/icon type">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="/Assets/styles.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/0d2059c859.js" crossorigin="anonymous"></script>
 </head>
 
@@ -30,7 +31,7 @@
         <section id="main_section" class="d-flex flex-column text-center">
 
             <!-- Easter egg button -->
-            <i class="fas fa-info-circle easter_icon" role="button"></i>
+            <i id="easter_open" class="fas fa-info-circle easter_icon" role="button"></i>
             <!-- -->
 
             <h2 class="daily_recette">La recette du jour</h2>
@@ -44,16 +45,18 @@
         </section>
 
         <!-- Hidden easter egg section -->
-        <section id="hidden_section" class="d-flex flex-column text-center">
+        <section id="hidden_section" class="d-flex flex-column text-center isHidden">
             <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2Fzle8iz78qw041.jpg&f=1&nofb=1">
             <h3>Salut les kids</h3>
-            <i class="fas fa-times-circle"></i>
+            <i id="easter_close" class="fas fa-times-circle"></i>
         </section>
         <!-- -->
+
         <hr>
     </body>
 
     <footer>
+        <script src="/Assets/easter.js"></script>
         <nav>
             <div class="d-flex justify-content-around">
                 <a href="https://facebook.com" target="_blank"><button type="button" class="btn btn-outline-light"><i class="fab fa-facebook-f"></i></button></a>
