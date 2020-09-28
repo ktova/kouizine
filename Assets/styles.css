@@ -50,3 +50,8 @@ section{
 .breadcrumb{
     background-color: #202020;
 }
+
+.easter_icon{
+    color:white;
+    position: absolute;
+}
