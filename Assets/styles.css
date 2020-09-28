@@ -51,12 +51,24 @@ section{
     background-color: #202020;
 }
 
+#validForm{
+    margin-top:30px;
+}
+
+input{
+    text-align: center;
+}
+
+#recetteSubmit > .form-group > label{
+    font-weight: 600;
+}
+
+/* Easter Egg */
+
 .easter_icon{
     color:white;
     position: absolute;
 }
-
-/* Easter Egg */
 
 @-webkit-keyframes rotating /* Safari and Chrome */ {
     from {
@@ -124,8 +136,4 @@ section{
 
 #checkInfo{
     color:orangered !important;
-}
-
-#validForm{
-    margin-top:30px;
 }
