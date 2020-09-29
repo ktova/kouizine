@@ -154,3 +154,10 @@ input{
 #filter_buttons{
     margin-bottom: 15px;
 }
+
+/* AJAX Recettes */
+
+.callback-recette {
+    margin-bottom:20px;
+    color:white;
+}

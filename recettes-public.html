@@ -44,8 +44,8 @@
 
             <!-- Filters -->
             <div id="filter_buttons" class="d-flex justify-content-around">
-                <button onclick="get_recette()" type="button" class="btn btn-outline-warning btn-sm filter-btn"><i class="far fa-eye"></i>&nbsp;Les plus vues</button>
-                <button onclick="get_recette()" type="button" class="btn btn-outline-primary btn-sm filter-btn"><i class="fas fa-fire-alt"></i>&nbsp;Les plus appréciées</button>
+                <button onclick="get_recette('views')" type="button" class="btn btn-outline-warning btn-sm filter-btn"><i class="far fa-eye"></i>&nbsp;Les plus vues</button>
+                <button onclick="get_recette('likes')" type="button" class="btn btn-outline-primary btn-sm filter-btn"><i class="fas fa-fire-alt"></i>&nbsp;Les plus appréciées</button>
             </div>
 
             <div id="filter_sliders" class="category_slider">
@@ -59,7 +59,9 @@
             <hr>
 
             <!-- Load Content -->
-            <section id="filter_results" class="d-flex"></section>
+            <section id="filter_results" class="d-flex justify-content-center flex-column">
+                <span>Sélectionnez une <b>catégorie</b> ci-dessus pour afficher les recettes !</span>
+            </section>
             <hr>
 
         </section>
@@ -87,23 +89,22 @@
         <script type="text/javascript" src="Assets/slick/slicker.js"></script>
         <script>
 
-            console.log('ok');
             // Load community content AJAX
-            function get_recette(){
-                // Debug entry
-                console.log('ok');
+            function get_recette(category){
                 // Variables
-                var ping = true;
+                var call_ping = true;
+                var cat_select = category;
                 // Ajax call
                 $.ajax({
                     url: 'https://kouizine.tova.dev/get_recettes',
                     context: this,
                     method:'POST',
                     data: {
-                        test : test
+                        req_cat : cat_select
                     },
                     success:function(response){
-                        console.log(response);
+                        $('#filter_results').empty();
+                        $('#filter_results').html(response);
                     },
                     error:function(response){
                         console.log(response);
