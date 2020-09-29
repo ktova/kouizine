@@ -130,7 +130,7 @@ input{
     cursor: pointer;
 }
 .isHidden{
-    display: none !important;
+    display: none;
 }
 
 /* Ajax handlers */
@@ -140,5 +140,5 @@ input{
 }
 
 #checkInfo{
-    color:orangered !important;
+    color:orangered;
 }
