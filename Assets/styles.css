@@ -169,3 +169,9 @@ input{
 .callbackRecette_title{
     font-family: 'Bangers', cursive;
 }
+
+.callbackRecette_button > button{
+    font-size:12px !important;
+    padding: .187rem .38rem;
+    margin-top: 10px;
+}
