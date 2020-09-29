@@ -40,7 +40,6 @@
         <section class="d-flex flex-column text-center">
 
             <h2 class="daily_recette">Les recettes de la commu</h2>
-            <hr>
 
             <!-- Filters -->
             <div id="filter_buttons" class="d-flex justify-content-around">
@@ -56,13 +55,11 @@
                 <img class="slider_img" src="Assets/slick/slick_imgs/fast_food.jpg"/>
                 <img class="slider_img" src="Assets/slick/slick_imgs/sushis.jpg"/>
             </div>
-            <hr>
 
             <!-- Load Content -->
             <section id="filter_results" class="d-flex justify-content-center flex-column">
                 <span>Sélectionnez une <b>catégorie</b> ci-dessus pour afficher les recettes !</span>
             </section>
-            <hr>
 
         </section>
 
@@ -94,6 +91,8 @@
                 // Variables
                 var call_ping = true;
                 var cat_select = category;
+                // Before ajax call
+                $('.filter-btn').addClass('disabled');
                 // Ajax call
                 $.ajax({
                     url: 'https://kouizine.tova.dev/get_recettes',
@@ -105,6 +104,7 @@
                     success:function(response){
                         $('#filter_results').empty();
                         $('#filter_results').html(response);
+                        $('.filter-btn').removeClass('disabled');
                     },
                     error:function(response){
                         console.log(response);
