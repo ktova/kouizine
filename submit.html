@@ -60,13 +60,13 @@
 
                 <div class="form-group">
                     <label for="timer">Temps de cuisson</label>
-                    <input type="text" class="form-control" id="submit_timer" aria-describedby="timerHelp">
+                    <input type="text" class="form-control" id="submit_timer" aria-describedby="timerHelp" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')">
                     <small id="timerHelp" class="form-text text-muted">Entrez le temps de cuisson en minutes.</small>
                 </div>
 
                 <div class="form-group">
                     <label for="timer">Pour combien de personnes ?</label>
-                    <input type="text" class="form-control" id="submit_count">
+                    <input type="text" class="form-control" id="submit_count" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')">
                 </div>
 
                 <div class="form-group">

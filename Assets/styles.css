@@ -158,6 +158,14 @@ input{
 /* AJAX Recettes */
 
 .callback-recette {
-    margin-bottom:20px;
+    margin:15px 0 15px 0;
     color:white;
+}
+
+.callback-recette > span {
+    font-size: 12px;
+}
+
+.callbackRecette_title{
+    font-family: 'Bangers', cursive;
 }
