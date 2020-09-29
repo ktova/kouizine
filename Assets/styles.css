@@ -130,7 +130,7 @@ input{
     cursor: pointer;
 }
 .isHidden{
-    display: none;
+    display: none !important;
 }
 
 /* Ajax handlers */
