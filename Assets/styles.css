@@ -142,3 +142,15 @@ input{
 #checkInfo{
     color:orangered;
 }
+
+/* Slick Slider Extra CSS */
+
+.slider_img{
+    height:170px;
+}
+.slider_img:hover{
+    cursor: pointer;
+}
+#filter_buttons{
+    margin-bottom: 15px;
+}

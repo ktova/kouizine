@@ -24,6 +24,7 @@
 
     position: absolute;
     top: 50%;
+    z-index: 999;
 
     display: block;
 
@@ -36,7 +37,7 @@
 
     cursor: pointer;
 
-    color: transparent;
+    color: white;
     border: none;
     outline: none;
     background: transparent;
@@ -79,7 +80,7 @@
 
 .slick-prev
 {
-    left: -25px;
+    left: 5px;
 }
 [dir='rtl'] .slick-prev
 {
@@ -97,7 +98,7 @@
 
 .slick-next
 {
-    right: -25px;
+    right: 5px;
 }
 [dir='rtl'] .slick-next
 {

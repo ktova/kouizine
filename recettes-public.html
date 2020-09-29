@@ -41,16 +41,25 @@
         <section class="d-flex flex-column text-center">
 
             <h2 class="daily_recette">Les recettes de la commu</h2>
-            <hr>
 
-            <hr>
-
-            <div class="category_slider">
-                <p>bit</p>
-                <p>a</p>
-                <p>salut</p>
-                <p>bit</p>
+            <!-- Filters -->
+            <div id="filter_buttons" class="d-flex justify-content-around">
+                <button type="button" class="btn btn-outline-warning btn-sm"><i class="far fa-eye"></i>&nbsp;Les plus vues</button>
+                <button type="button" class="btn btn-outline-primary btn-sm"><i class="fas fa-fire-alt"></i>&nbsp;Les plus appréciées</button>
             </div>
+
+            <div id="filter_sliders" class="category_slider">
+                <img class="slider_img" src="Assets/slick/slick_imgs/asian_food.jpg"/>
+                <img class="slider_img" src="Assets/slick/slick_imgs/fast_food.jpg"/>
+                <img class="slider_img" src="Assets/slick/slick_imgs/sushis.jpg"/>
+                <img class="slider_img" src="Assets/slick/slick_imgs/asian_food.jpg"/>
+                <img class="slider_img" src="Assets/slick/slick_imgs/fast_food.jpg"/>
+                <img class="slider_img" src="Assets/slick/slick_imgs/sushis.jpg"/>
+            </div>
+            <hr>
+
+            <!-- Load Content -->
+            <section id="filter_results" class="d-flex"></section>
             <hr>
 
         </section>
