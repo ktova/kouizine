@@ -93,6 +93,8 @@
                 var cat_select = category;
                 // Before ajax call
                 $('.filter-btn').addClass('disabled');
+                $('#filter_results').empty();
+                $('#filter_results').html('<h4 style="text-align:center;margin-top:15px;"><i class="fa fa-refresh fa-spin fa-3x fa-fw text-warning"></i><h4>');
                 // Ajax call
                 $.ajax({
                     url: 'https://kouizine.tova.dev/get_recettes',
@@ -102,12 +104,13 @@
                         req_cat : cat_select
                     },
                     success:function(response){
-                        $('#filter_results').empty();
-                        $('#filter_results').html(response);
-                        $('.filter-btn').removeClass('disabled');
+                        setTimeout(function(){
+                            $('#filter_results').html(response);
+                            $('.filter-btn').removeClass('disabled');
+                        },500);
                     },
                     error:function(response){
-                        console.log(response);
+                        alert('An error occured');
                     }
                 })
             };   
