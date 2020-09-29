@@ -41,11 +41,12 @@
         <section class="d-flex flex-column text-center">
 
             <h2 class="daily_recette">Les recettes de la commu</h2>
+            <hr>
 
             <!-- Filters -->
             <div id="filter_buttons" class="d-flex justify-content-around">
-                <button type="button" class="btn btn-outline-warning btn-sm"><i class="far fa-eye"></i>&nbsp;Les plus vues</button>
-                <button type="button" class="btn btn-outline-primary btn-sm"><i class="fas fa-fire-alt"></i>&nbsp;Les plus appréciées</button>
+                <button type="button" class="btn btn-outline-warning btn-sm" onclick="getRecettes()"><i class="far fa-eye"></i>&nbsp;Les plus vues</button>
+                <button type="button" class="btn btn-outline-primary btn-sm" onclick="getRecettes()"><i class="fas fa-fire-alt"></i>&nbsp;Les plus appréciées</button>
             </div>
 
             <div id="filter_sliders" class="category_slider">
@@ -83,12 +84,38 @@
         <!-- Load slickJS -->
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <script type="text/javascript" src="Assets/slick/slicker.js"></script>
-        <!-- Menu toggle -->
         <script>
+
+        // Menu Toggle
         $('#dropdownMenu').on('click', function () {
             $('.dropdown-menu').toggle();
         });
+
+        // Load community content AJAX
+        function getRecettes(){
+            // Debug entry
+            console.log('ok');
+            // Variables
+            var ping = true;
+            // Ajax call
+            $.ajax({
+                url: 'https://kouizine.tova.dev/get_recettes',
+                context: this,
+                method:'POST',
+                data: {
+                    test : test
+                },
+                success:function(response){
+                    console.log(response);
+                },
+                error:function(response){
+                    console.log(response);
+                }
+            })
+        }
+
         </script>
+
     </footer>
 
 </main>

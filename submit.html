@@ -69,6 +69,11 @@
                     <input type="text" class="form-control" id="submit_count">
                 </div>
 
+                <div class="form-group">
+                    <label for="pseudo">Catégorie</label>
+                    <input type="text" class="form-control" id="submit_cat">
+                </div>
+
                <div class="form-group">
                     <label for="ingredients">Ingrédients</label>
                     <textarea class="form-control" id="submit_content" rows="3" aria-describedby="contentHelp"></textarea>
@@ -134,6 +139,7 @@
                 var recette_user = $('#submit_user').val();
                 var recette_timer = $('#submit_timer').val();
                 var recette_count = $('#submit_count').val();
+                var recette_cat = $('#submit_cat').val();
                 var recette_content = $('#submit_content').val();
                 var recette_steps = $('#submit_steps').val();
                 var recette_checker = $('#checker').prop('checked');
@@ -148,6 +154,7 @@
                         user : recette_user,
                         timer : recette_timer,
                         count : recette_count,
+                        cat : recette_cat,
                         content : recette_content,
                         steps : recette_steps,
                         checker : recette_checker
