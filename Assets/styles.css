@@ -68,6 +68,24 @@ input{
     text-align: center;
 }
 
+.form-check{
+    margin-top: 1rem;
+}
+
+.custom-file-label{
+    text-align: initial !important;
+}
+.custom-file-label::before{
+    content: '> ';
+}
+.custom-file-label::after{
+    content: "Choisir";
+}
+
+.labelRecette{
+    font-weight: 600;
+}
+
 #recetteSubmit > .form-group > label{
     font-weight: 600;
 }
