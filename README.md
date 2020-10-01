@@ -9,5 +9,5 @@ Egalement disponible sur https://kouizine.tova.dev
 
 - User accounts
 - User comments
-- Images upload
+- Images upload // Branch submit_img
 - Votes
