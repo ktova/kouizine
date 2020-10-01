@@ -157,7 +157,7 @@
                 // Image handler
                 var imgclean = $('#fileHelp')[0];
                 var filename = $('.custom-file-label').html();
-                imgdata = new FormData(imgclean);
+                imgdata = new FormData();
                 imgdata.append('file',imgclean.files[0]);
                 var imgname = $('input[type=file]').val();
                 var imgsize = $('#fileHelp')[0].files[0].size;
@@ -189,6 +189,8 @@
 
                 // Ajax call
                 $.ajax({
+                    processData: false,
+                    contentType: false,
                     url: 'https://kouizine.tova.dev/recette_submit',
                     context: this,
                     method:'POST',
@@ -205,6 +207,7 @@
                     },
                     success:function(response){
                         // remove form
+                        console.log(response);
                         $('#errorForm').hide(0);
                         $('#recetteSubmit').empty();
                         $('#recetteSubmit_warning').remove();
