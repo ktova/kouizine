@@ -157,7 +157,7 @@ input{
 
 /* Ajax handlers */
 
-#errorForm, #validForm{
+#errorForm, #validForm, #errorImg{
     display: none;
 }
 

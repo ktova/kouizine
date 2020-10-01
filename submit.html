@@ -91,7 +91,7 @@
                <div class="form-group custom-file modal-sm">
                     <input type="file" class="custom-file-input  bg-dark text-white" id="fileHelp">
                     <label class="custom-file-label" for="customFile">Choose file</label>
-                    <small id="fileHelp" class="form-text text-muted">Must be a .jpg | .png</small>
+                    <small id="fileHelp" class="form-text text-muted">Formats acceptés : jpg ,png</small>
                </div>
 
                 <div class="form-group form-check">
@@ -110,6 +110,13 @@
                   <span aria-hidden="true" style="color:black">&times;</span>
                 </button>
               </div>
+
+            <div id="errorImg" class="alert alert-warning alert-dismissible fade show" role="alert">
+                L'image envoyée est invalide ! <strong id="img_error"></strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true" style="color:black">&times;</span>
+                </button>
+            </div>
 
             <!-- Form valid box after submitting -->
             <div id="validForm" class="text-white">
@@ -143,6 +150,33 @@
 
             // Ajax function
             function form_submit_ajax() {
+                // Hide previous error
+                $('#errorImg').hide(0);
+                $('#errorForm').hide(0);
+
+                // Image handler
+                var imgclean = $('#fileHelp')[0];
+                var filename = $('.custom-file-label').html();
+                imgdata = new FormData(imgclean);
+                imgdata.append('file',imgclean.files[0]);
+                var imgname = $('input[type=file]').val();
+                var imgsize = $('#fileHelp')[0].files[0].size;
+                var imgtype = imgname.substr( (imgname.lastIndexOf('.')+ 1) );
+
+                if( imgsize > 1000000){
+                    // Display box-info for oversized img
+                    $('#img_error').html('Fichier trop lourd (Max 1Mb)')
+                    $('#errorImg').fadeIn(250);
+                    return false;
+                }
+
+                if( imgtype !=='jpg' && imgtype !== 'png' ){
+                    // Display box-info for oversized img
+                    $('#img_error').html('Format invalide')
+                    $('#errorImg').fadeIn(250);
+                    return false;
+                }
+
                 // Variables
                 var recette_title = $('#submit_title').val();
                 var recette_user = $('#submit_user').val();
@@ -166,7 +200,8 @@
                         cat : recette_cat,
                         content : recette_content,
                         steps : recette_steps,
-                        checker : recette_checker
+                        checker : recette_checker,
+                        image : imgdata
                     },
                     success:function(response){
                         // remove form
