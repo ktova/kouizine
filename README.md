@@ -12,3 +12,5 @@ Egalement disponible sur https://kouizine.tova.dev
 - User comments
 - Images upload // Branch submit_img
 - Votes
+- Admin (ongoing)
+- Spammed submits tracking 
