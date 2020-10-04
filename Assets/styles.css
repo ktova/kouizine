@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Oxygen&display=swap');
 
 body {
-	background: rgb(69,66,108);
-    background: linear-gradient(0deg, rgba(69,66,108,1) 0%, rgba(43,43,43,1) 100%, rgba(0,212,255,1) 100%);
+    background: rgb(69,66,108);
+    background : url('/Assets/kitchen_bg_alt.png');
+    background-color: #3a3a3a;
+    /*background: linear-gradient(0deg, rgba(69,66,108,1) 0%, rgba(43,43,43,1) 100%, rgba(0,212,255,1) 100%);*/
     min-height: 100vh;
 }
 
@@ -34,7 +36,7 @@ svg{
 
 section{
     padding:10px;
-    background-color: rgba(255,255,255,0.02);
+    background-color: rgba(29, 29, 29, 0.9);
     border: 2px solid rgba(255,255,255,0.05);
     border-radius: 10px;
 }
