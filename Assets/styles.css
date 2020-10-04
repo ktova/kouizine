@@ -6,10 +6,17 @@ body {
     background-color: #3a3a3a;
     /*background: linear-gradient(0deg, rgba(69,66,108,1) 0%, rgba(43,43,43,1) 100%, rgba(0,212,255,1) 100%);*/
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 span, p, h1, h2, h3, h4, h5, h6, a {
     font-family: 'Oxygen', sans-serif;
+}
+
+.copyright_symbol{
+    font-family: 'Helvetica';
 }
 
 span, p, h1, h2, h3, h4, h5, h6, li, label{
@@ -39,6 +46,28 @@ section{
     background-color: rgba(29, 29, 29, 0.9);
     border: 2px solid rgba(255,255,255,0.05);
     border-radius: 10px;
+}
+
+footer{
+    padding-top:10px;
+    background-color: rgba(10, 10, 10, 0.9);
+}
+
+.footerNav{
+    margin-bottom: 10px;
+}
+
+.copyrightText, .footerInfo{
+    margin-bottom: 5px;
+}
+
+.footerInfo{
+    font-size: 12px;
+}
+
+.copyrightText > a {
+    color:white;
+    margin: 0 2.5px 0 2.5px;
 }
 
 .daily_recette{
