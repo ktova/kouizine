@@ -13,3 +13,4 @@ Egalement disponible sur https://kouizine.tova.dev
 - Votes
 - Admin (ongoing)
 - Spammed submits tracking 
+- Autopush.sh
