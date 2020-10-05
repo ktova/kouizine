@@ -69,11 +69,6 @@ require_once('templates/header.php');
             })
         };   
 
-        // Menu Toggle
-        $('#dropdownMenu').on('click', function () {
-            $('.dropdown-menu').toggle();
-        });
-
     </script>
 
 <?php
