@@ -20,7 +20,7 @@
 <main class="container">
 
     <header>
-        <a class="d-flex justify-content-center" href="/home.html">
+        <a class="d-flex justify-content-center" href="/home">
             <img src="/Assets/logo_kz.png" alt="Logo Kouizine">
         </a>
         
