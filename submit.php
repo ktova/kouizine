@@ -137,11 +137,6 @@ require_once('templates/header.php');
         $('.close').click(function(){
             $('#errorForm').fadeOut(250);
         });
-
-    // Dropdown menu
-    $('#dropdownMenu').on('click', function () {
-        $('.dropdown-menu').toggle();
-    });
     </script>
 
 <?php
