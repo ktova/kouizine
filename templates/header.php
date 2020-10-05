@@ -23,6 +23,10 @@
         <a class="d-flex justify-content-center" href="/home">
             <img src="/Assets/logo_kz.png" alt="Logo Kouizine">
         </a>
+
+        <div class="user_log">
+            <i class="fas fa-user-circle fa-2x"></i>
+        </div>
         
         <nav>
             <div class="d-flex justify-content-around">
