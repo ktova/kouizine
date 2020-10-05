@@ -2,8 +2,7 @@
 
 Site en html/css/js pour le projet créa - Dernière semaine de Septembre 2020
 
-Clonez et le tour est joué :)
-
+- Le rendu html est disponible dans le dossier /html_cours
 Egalement disponible sur https://kouizine.tova.dev
 
 # TO DO
