@@ -18,3 +18,25 @@
 </head>
 
 <main class="container">
+
+    <header>
+        <a class="d-flex justify-content-center" href="/home.html">
+            <img src="/Assets/logo_kz.png" alt="Logo Kouizine">
+        </a>
+        
+        <nav>
+            <div class="d-flex justify-content-around">
+                <div class="dropdown">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-utensils"></i>&nbsp; Nos recettes
+                    </button>
+                    <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenu">
+                        <a class="dropdown-item text-white" href="/recettes">Team Kouizine</a>
+                        <a class="dropdown-item text-white" href="/recettes-public">Communauté</a>
+                    </div>
+                </div>
+                <a href="/submit"><button type="button" class="btn btn-warning"><i class="fas fa-scroll"></i>&nbsp; Publier une recette</button></a>
+            </div>
+        </nav>
+        <hr>
+    </header>
