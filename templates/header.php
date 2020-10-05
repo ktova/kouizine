@@ -6,6 +6,12 @@
     <title>Mon site de kouizine</title>
     <link rel="icon" href="/Assets/favicon.png"  type="image/icon type">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <?php 
+    if( $_SERVER['REQUEST_URI'] == '/recettes-public'){ ?>
+        <link rel="stylesheet" href="/Assets/slick/slick.css">
+        <link rel="stylesheet" href="/Assets/slick/slick-theme.css">
+    <?php }
+    ?>
     <link rel="stylesheet" href="/Assets/styles.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/0d2059c859.js" crossorigin="anonymous"></script>
