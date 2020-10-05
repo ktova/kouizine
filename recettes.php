@@ -1,6 +1,6 @@
 <?php
 // Load header
-require_once('templates/header.html');
+require_once('templates/header.php');
 ?>
 
 <!-- Site content -->
