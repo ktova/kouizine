@@ -25,7 +25,7 @@
         </a>
 
         <div class="user_log">
-            <i class="fas fa-user-circle fa-2x"></i>
+            <i class="fas fa-user-circle fa-2x" style="color:white;"></i>
         </div>
         
         <nav>
