@@ -107,76 +107,66 @@ require_once('templates/header.php');
 
         <hr>
     </body>
-</main>
 
-    <footer>
-        <div class="d-flex justify-content-center flex-column text-center">
-            <p class="copyrightText">
-                <span class="copyright_symbol">&#169;</span> Kouizine
-                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f fa-0.5x"></i></a>
-                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>    
-            </p><br>
-            <p class="footerInfo"><a href="/mentions_legales.html" class="text-decoration-none">Mentions légales</a> | <a href="/protection-donnees.html">Protection des données</a> </p><br>
-        </div>
+    <!-- Ajax Form handling -->
+    <script>
+        // Ajax function
+        function form_submit_ajax() {
+            // Variables
+            var recette_title = $('#submit_title').val();
+            var recette_user = $('#submit_user').val();
+            var recette_timer = $('#submit_timer').val();
+            var recette_count = $('#submit_count').val();
+            var recette_cat = $('#submit_cat').val();
+            var recette_content = $('#submit_content').val();
+            var recette_steps = $('#submit_steps').val();
+            var recette_checker = $('#checker').prop('checked');
 
-        <!-- Ajax Form handling -->
-        <script>
-            // Ajax function
-            function form_submit_ajax() {
-                // Variables
-                var recette_title = $('#submit_title').val();
-                var recette_user = $('#submit_user').val();
-                var recette_timer = $('#submit_timer').val();
-                var recette_count = $('#submit_count').val();
-                var recette_cat = $('#submit_cat').val();
-                var recette_content = $('#submit_content').val();
-                var recette_steps = $('#submit_steps').val();
-                var recette_checker = $('#checker').prop('checked');
+            // Ajax call
+            $.ajax({
+                url: 'https://kouizine.tova.dev/recette_submit',
+                context: this,
+                method:'POST',
+                data: {
+                    title : recette_title,
+                    user : recette_user,
+                    timer : recette_timer,
+                    count : recette_count,
+                    cat : recette_cat,
+                    content : recette_content,
+                    steps : recette_steps,
+                    checker : recette_checker
+                },
+                success:function(response){
+                    // remove form
+                    $('#errorForm').hide(0);
+                    $('#recetteSubmit').empty();
+                    $('#recetteSubmit_warning').remove();
+                    $('#recetteSubmit_btn').remove();
+                    // Change main content on valid response
+                    $('#recetteSubmit').html('<i class="fa fa-refresh fa-spin fa-3x fa-fw text-warning"></i>');
+                    $('#validForm').fadeIn(250);
+                    $('#daily_recette').html("Merci d'avoir publié votre recette !");
+                    $('#recetteDesc').remove();
+                },
+                error:function(){
+                    $('#errorForm').fadeIn(250);
+                }
+            })
+        }
 
-                // Ajax call
-                $.ajax({
-                    url: 'https://kouizine.tova.dev/recette_submit',
-                    context: this,
-                    method:'POST',
-                    data: {
-                        title : recette_title,
-                        user : recette_user,
-                        timer : recette_timer,
-                        count : recette_count,
-                        cat : recette_cat,
-                        content : recette_content,
-                        steps : recette_steps,
-                        checker : recette_checker
-                    },
-                    success:function(response){
-                        // remove form
-                        $('#errorForm').hide(0);
-                        $('#recetteSubmit').empty();
-                        $('#recetteSubmit_warning').remove();
-                        $('#recetteSubmit_btn').remove();
-                        // Change main content on valid response
-                        $('#recetteSubmit').html('<i class="fa fa-refresh fa-spin fa-3x fa-fw text-warning"></i>');
-                        $('#validForm').fadeIn(250);
-                        $('#daily_recette').html("Merci d'avoir publié votre recette !");
-                        $('#recetteDesc').remove();
-                    },
-                    error:function(){
-                        $('#errorForm').fadeIn(250);
-                    }
-                })
-            }
-
-            // Ajax response css changes
-            $('.close').click(function(){
-                $('#errorForm').fadeOut(250);
-            });
-
-        // Dropdown menu
-        $('#dropdownMenu').on('click', function () {
-            $('.dropdown-menu').toggle();
+        // Ajax response css changes
+        $('.close').click(function(){
+            $('#errorForm').fadeOut(250);
         });
-        </script>
-    </footer>
 
-</html>
+    // Dropdown menu
+    $('#dropdownMenu').on('click', function () {
+        $('.dropdown-menu').toggle();
+    });
+    </script>
+
+<?php
+// Load footer
+require_once('templates/footer.html');
+?>

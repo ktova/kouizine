@@ -48,25 +48,8 @@ require_once('templates/header.php');
         </section>
         <hr>
     </body>
-</main>
 
-    <footer>
-        <div class="d-flex justify-content-center flex-column text-center">
-            <p class="copyrightText">
-                <span class="copyright_symbol">&#169;</span> Kouizine
-                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f fa-0.5x"></i></a>
-                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>    
-            </p><br>
-            <p class="footerInfo"><a href="/mentions_legales.html" class="text-decoration-none">Mentions légales</a> | <a href="/protection-donnees.html">Protection des données</a> </p><br>
-        </div>
-
-        <!-- Menu toggle -->
-        <script>
-        $('#dropdownMenu').on('click', function () {
-            $('.dropdown-menu').toggle();
-        });
-        </script>
-    </footer>
-
-</html>
+<?php
+// Load footer
+require_once('templates/footer.html');
+?>
